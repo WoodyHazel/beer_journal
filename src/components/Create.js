@@ -14,18 +14,25 @@ export default function CreateEntry() {
       "https://images.unsplash.com/photo-1593375547549-29fe3bf5c94f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2206&q=80",
   });
 
-  const [entriesArray, setEntriesArray] = useState([
-    {
-      name: "Hazy Little Thing",
-      type: "IPA",
-      company: "Sierra Nevada",
-      author: "Woody Hazel",
-      date: "2022-03-09",
-      description: "This is one of my favorites.",
-      imageUrl:
-        "https://images.unsplash.com/photo-1593375547549-29fe3bf5c94f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2206&q=80",
-    },
-  ]);
+  const [entriesArray, setEntriesArray] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("entries"));
+    } catch {
+      return [
+        {
+          name: "Hazy Little Thing",
+          type: "IPA",
+          company: "Sierra Nevada",
+          author: "Woody Hazel",
+          date: "2022-03-09",
+          description:
+            "This is one of my favorite beers. It's juicy, hoppy, and delicious!",
+          imageUrl:
+            "https://images.unsplash.com/photo-1593375547549-29fe3bf5c94f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2206&q=80",
+        },
+      ];
+    }
+  });
 
   useEffect(() => {
     localStorage.setItem("entries", JSON.stringify(entriesArray));

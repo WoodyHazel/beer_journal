@@ -153,14 +153,15 @@ section header h2 {
     url(https://images.unsplash.com/photo-1505075106905-fb052892c116?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
 }
 .hero h1 {
-  font-size: 4em;
+  font-size: 1.4em;
+  text-align: center;
   color: var(--accent-color);
   background-color: rgba(0, 0, 0, 0.585);
   padding: 10px 30px;
   border-radius: 5px;
 }
 .hero h3 {
-  font-size: 2.5em;
+  font-size: 1.2em;
   letter-spacing: 2px;
   padding: 1rem;
   color: var(--dark-blue);
@@ -294,10 +295,10 @@ section header h2 {
 }
 .breweries .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  height: 150px;
 }
 .breweries .refresh,
 .breweries-form {
@@ -408,21 +409,13 @@ section header h2 {
   color: #fff;
 }
 @media screen and (min-width: 650px) {
+  .hero {
+    font-size: 2em;
+  }
+  .breweries .container {
+    flex-direction: row;
+  }
   .entry-form {
     grid-template-columns: 1fr 1fr;
   }
 }
-
-/* 
-
-tofino
-banff
-moab
-zion
-sequoia 
-mojave
-sedona
-badlands
-yosemite 
-
-*/
